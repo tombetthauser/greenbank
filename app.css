@@ -1,0 +1,16 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: monospace;
+	font-size: 12px;
+	white-space: nowrap;
+}
+
+input {
+	background-color: black;
+	color: white;
+	border:0 solid rgba(0,0,0,0);
+	font-family: monospace;
+	font-size: 12px;
+	width: 80%;
+}
