@@ -31,7 +31,7 @@ $("#commandInput").keypress(function(e) {
     	else if (input === "f" || input === "files") { pictureInfoCommand(); }
     	else if (input === "p24" || input === "pic24" || input === "picture24") { pictureCommand(24); }
     	else if (input === "p13" || input === "pic13" || input === "picture13") { pictureCommand(13); }
-    	else if (input === "p43" || input === "pic43" || input === "picture43") { pictureCommand(43); }
+    	// else if (input === "p43" || input === "pic43" || input === "picture43") { pictureCommand(43); }
     	else if (input === "p44" || input === "pic44" || input === "picture44") { pictureCommand(44); }
     	else if (input === "p34" || input === "pic34" || input === "picture34") { pictureCommand(34); }
     	else { elseCommand(); }
@@ -195,7 +195,7 @@ function pictureInfoCommand(){
 		+ "&emsp;&emsp;file02:&lt;enter:pic44/picture44&gt;<br>"
 		+ "&emsp;&emsp;file03:&lt;enter:pic13/picture13&gt;<br>"
 		+ "&emsp;&emsp;file04:&lt;enter:pic34/picture34&gt;<br>"
-		+ "&emsp;&emsp;file05:&lt;enter:pic43/picture43&gt;<br>"
+		// + "&emsp;&emsp;file05:&lt;enter:pic43/picture43&gt;<br>"
 		+ "<br>"
 	);
 	helpCounter = 0;
