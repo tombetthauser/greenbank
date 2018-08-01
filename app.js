@@ -216,6 +216,10 @@ function fullScreenCommand() {
 	helpCounter = 0;
 }
 
+function focusInput() {
+    document.getElementById("commandInput").focus();
+}
+
 // function nameChange (){
 // 	document.getElementById("prompt").innerHTML = "/enter_new_username";
 // 	$("#commandInput").keypress(function(e) {
