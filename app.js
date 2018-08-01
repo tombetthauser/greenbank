@@ -29,6 +29,7 @@ $("#commandInput").keypress(function(e) {
     	else if (input === "l" || input === "location") { locationCommand(); }
     	else if (input === "a" || input === "advanced") { advancedCommand(); }
     	else if (input === "f" || input === "files") { pictureInfoCommand(); }
+    	else if (input === "fs" || input === "fullscreen") { fullScreenCommand(); }
     	else if (input === "p24" || input === "pic24" || input === "picture24") { pictureCommand(24); }
     	else if (input === "p13" || input === "pic13" || input === "picture13") { pictureCommand(13); }
     	// else if (input === "p43" || input === "pic43" || input === "picture43") { pictureCommand(43); }
@@ -96,7 +97,8 @@ function helpCommand(){
 		+ "&emsp;&emsp;i/info:&lt;list:user_information&gt;<br>"
 		+ "&emsp;&emsp;l/location:&lt;list:user_location&gt;<br>"
 		+ "&emsp;&emsp;f/files:&lt;list_files:current_folder&gt;<br>"
-		+ "&emsp;&emsp;a/advanced:&lt;list:advanced_commands&gt;<br>"
+		+ "&emsp;&emsp;fs/fullscreen:&lt;enter_fullScreen&gt;<br>"
+		+ "&emsp;&emsp;a/advanced:&lt;list:advancedCommands&gt;<br>"
 		+ "<br>"
 	);
 	helpCounter = 0;
@@ -200,6 +202,18 @@ function pictureInfoCommand(){
 	);
 	helpCounter = 0;
 	beep.play();
+}
+
+function fullScreenCommand() {
+	var elem = document.getElementById("body");
+    req = elem.requestFullScreen || elem.webkitRequestFullScreen || elem.mozRequestFullScreen;
+    req.call(elem);	
+	$("#addedContent").prepend(
+		"@" + minutes + "." + seconds 
+		+ "&lt;" + input + "&gt;"
+		+ ":fullScreen_enter/exit:called<br>"
+	);
+	helpCounter = 0;
 }
 
 // function nameChange (){
