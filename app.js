@@ -5,6 +5,7 @@ var minutes = 0;
 var seconds = 0;
 var helpCounter = 0;
 var helpTrigger = 3;
+var soundPlaying = false;
 
 var beep = new Audio('beep2.wav');
 
@@ -17,6 +18,13 @@ setInterval(function(){
 	minutes = ("0" + tempMinutes).slice(-2);
 	seconds = ("0" + tempSeconds).slice(-2);
 },1000);
+
+var backgroundSound = new Audio('back.mp3'); 
+backgroundSound.addEventListener('ended', function() {
+    this.currentTime = 0;
+    this.play();
+}, false);
+backgroundSound.play();
 
 initCommand();
 
@@ -38,6 +46,10 @@ $("#commandInput").keypress(function(e) {
     	else { elseCommand(); }
     	input = 0;
     	document.getElementById('commandInput').value = "";
+    	if (soundPlaying === false) {
+    		backgroundSound.play();
+    		soundPlaying = true;
+    	}
     };
 });
 
